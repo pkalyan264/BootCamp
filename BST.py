@@ -1,35 +1,35 @@
-class TreeNode:
-	def __init__(self,val=None):
-		self.val=val
-		self.left=None
-		self.right=None
-def insert(root, key):
-	if root is None:
-		return TreeNode(key)
-	else:
-		if root.val==key:
-			return root
-		elif root.val<key:
-			root.right=insert(root.right,key)
-		else:
-			root.left=insert(root.left,key)
-	return root
 
-def inorder(root,lst):
-	if root:
-		inorder(root.left,lst)
-		lst.append(root.val)
-		inorder(root.right,lst)
-	return lst
+class Tree:
+    def __init__(self, val=None):
+        self.val = val
+        self.left = None
+        self.right = None
 
-if __name__=='__main__':
-	Tree=TreeNode(50)
-	Tree=insert(Tree,40)
-	Tree=insert(Tree,60)
-	Tree=insert(Tree,30)
+    def insert(self, key):
+        if self is None:
+            return Tree(key)
+        else:
+            if self.val == key:
+                return self
+            elif self.val < key:
+                self.right = Tree.insert(self.right, key)
+            else:
+                self.left = Tree.insert(self.left, key)
+        return self
 
-	lst=[]
-	print(inorder(Tree,lst))
+    def inorder(self, return_list):
+        if self:
+            Tree.inorder(self.left, return_list)
+            return_list.append(self.val)
+            Tree.inorder(self.right, return_list)
+        return return_list
 
 
+if __name__ == '__main__':
+    curr = Tree(50)
+    curr = curr.insert(40)
+    curr = curr.insert(60)
+    curr = curr.insert(30)
 
+    lst = []
+    print(Tree.inorder(curr, lst))
