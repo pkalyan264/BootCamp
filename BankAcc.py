@@ -1,4 +1,4 @@
-class BankAccount:
+class BankAccount2:
     def __init__(self, owner, bal=0):
         self.owner = owner
         if bal >= 0:
