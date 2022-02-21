@@ -9,20 +9,19 @@ class Tree:
     def __init__(self, root=None):
         self.root: Node = root
 
-    def __rec_insert(self, key, curr_root: Node = None):
+    def insert(self, key, curr_root=Node(None)):
         if curr_root is None:
             return Node(key)
+        elif curr_root.val is None:
+            return self.insert(key, self.root)
         else:
             if curr_root.val == key:
                 return curr_root
             elif curr_root.val < key:
-                curr_root.right = self.__rec_insert(key, curr_root.right)
+                curr_root.right = self.insert(key, curr_root.right)
             else:
-                curr_root.left = self.__rec_insert(key, curr_root.left)
+                curr_root.left = self.insert(key, curr_root.left)
         return curr_root
-
-    def insert(self, key):
-        self.__rec_insert(key, self.root)
 
     def inorder(self, curr_root=Node(None), tree_nodes=[]):
         if curr_root is None:
@@ -34,7 +33,6 @@ class Tree:
             tree_nodes.append(curr_root.val)
             self.inorder(curr_root.right, tree_nodes)
             return tree_nodes
-
 
 
 if __name__ == '__main__':

@@ -9,11 +9,11 @@ def guess_the_number():
     prev_diff = sys.maxsize
 
     while prev != random_number_generated:
-        curr = int(input())
+        curr_guess = int(input())
         guesses += 1
-        curr_diff = abs(curr - random_number_generated)
+        curr_diff = abs(curr_guess - random_number_generated)
 
-        if curr < 0 or curr > 100:
+        if curr_guess < 0 or curr_guess > 100:
             print("Out of Bounds")
         else:
             if guesses == 1:  # First Guess
@@ -30,7 +30,7 @@ def guess_the_number():
                     return guesses
                 else:
                     print("WARMER")
-            prev = curr
+            prev = curr_guess
             prev_diff = curr_diff
 
     return guesses

@@ -1,20 +1,11 @@
-from Challenges.tree import Tree
+from challenges.tree import Tree
 import unittest
-from Challenges.tree import Node
+from challenges.tree import Node
 
 
 class TestBST(unittest.TestCase):
-    def test_node_initializer(self):
-        node = Node(10)
-        tree = Tree(node)
-        self.assertEqual(tree.root.val, 10)
-        self.assertIsNone(tree.root.right)
-        self.assertIsNone(tree.root.left)
 
-        tree = Tree()
-        self.assertIsNone(tree.root)
-
-    def test_Insert_Func(self):
+    def test_insert_func(self):
         node = Node(20)
         tree = Tree(node)
         tree.insert(10)
@@ -39,9 +30,9 @@ class TestBST(unittest.TestCase):
         self.assertEqual(tree.root.val, 20)
         self.assertEqual(tree.root.right.val, 40)
         self.assertEqual(tree.root.right.left.val, 30)
-        self.assertEqual(tree.root.right.left.left.val,25)
+        self.assertEqual(tree.root.right.left.left.val, 25)
 
-    def test_Inorder_Traversal(self):
+    def test_inorder_traversal(self):
         node = Node(10)
         tree = Tree(node)
         tree.insert(20)
