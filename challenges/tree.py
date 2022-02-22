@@ -34,12 +34,3 @@ class Tree:
             self.inorder(curr_root.right, tree_nodes)
             return tree_nodes
 
-
-if __name__ == '__main__':
-    node = Node(50)
-    tree = Tree(node)
-    tree.insert(40)
-    tree.insert(60)
-    tree.insert(30)
-
-    print(tree.inorder())

@@ -4,7 +4,7 @@ from challenges.tree import Tree, Node
 
 class TestBST(TestCase):
 
-    def test_insert_func(self):
+    def test_insert(self):
         node = Node(20)
         tree = Tree(node)
         tree.insert(10)
@@ -31,7 +31,7 @@ class TestBST(TestCase):
         self.assertEqual(tree.root.right.left.val, 30)
         self.assertEqual(tree.root.right.left.left.val, 25)
 
-    def test_inorder_traversal(self):
+    def test_inorder(self):
         node = Node(10)
         tree = Tree(node)
         tree.insert(20)
