@@ -14,7 +14,3 @@ class Cylinder:
         pi = math.pi
         return pi * self.radius ** 2 * self.height
 
-
-c1 = Cylinder(1, 1)
-print(c1.volume())
-print(c1.surface_area())
