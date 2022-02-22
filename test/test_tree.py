@@ -1,9 +1,8 @@
-from challenges.tree import Tree
-import unittest
-from challenges.tree import Node
+from unittest import TestCase
+from challenges.tree import Tree, Node
 
 
-class TestBST(unittest.TestCase):
+class TestBST(TestCase):
 
     def test_insert_func(self):
         node = Node(20)

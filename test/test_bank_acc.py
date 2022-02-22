@@ -1,9 +1,9 @@
-import unittest
+from unittest import TestCase
 from challenges.bank_account import BankAccount
 
 
-class TestBank(unittest.TestCase):
-    def test_deposit_func(self):
+class TestBank(TestCase):
+    def test_deposit(self):
         user = BankAccount("Amit")
         user.deposit(100)
         self.assertEqual(user.bal, 100)
@@ -24,7 +24,7 @@ class TestBank(unittest.TestCase):
         user.deposit(0)
         self.assertEqual(user.bal, 100)
 
-    def test_withdraw_func(self):
+    def test_withdraw(self):
         user = BankAccount("Amit")
         user.withdraw(100)
         self.assertEqual(user.bal, 0)
